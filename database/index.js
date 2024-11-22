@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+require("dotenv").config();
 
 const connectToDB = async () => {
-  const connectionUrl = "mongodb://localhost:27017/blog";
+  const connectionUrl = process.env.MONGO_URI;
 
   mongoose
     .connect(connectionUrl)
